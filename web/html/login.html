@@ -444,6 +444,105 @@
   .ant-space-item .ant-switch {
     margin: 2px 0 4px;
   }
+
+  /* 公司品牌标识样式 */
+  .company-branding {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 1rem;
+    border: 2px solid #e0e6ed;
+  }
+
+  .dark .company-branding {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-color: #4a5568;
+  }
+
+  .company-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  .dark .company-name {
+    color: #e2e8f0;
+  }
+
+  .system-type {
+    font-size: 0.9rem;
+    color: #718096;
+    font-style: italic;
+  }
+
+  .dark .system-type {
+    color: #a0aec0;
+  }
+
+  /* 使用条款链接样式 */
+  .terms-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .terms-link a {
+    color: #006655;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .terms-link a:hover {
+    text-decoration: underline;
+  }
+
+  .dark .terms-link a {
+    color: #4fd1c7;
+  }
+
+  /* 使用条款模态框样式 */
+  .terms-modal .ant-modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 24px;
+  }
+
+  .terms-content {
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  .terms-content h3 {
+    color: #2c3e50;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .dark .terms-content h3 {
+    color: #e2e8f0;
+  }
+
+  .terms-content p {
+    margin-bottom: 12px;
+    text-align: justify;
+  }
+
+  .terms-checkbox {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+  }
+
+  .dark .terms-checkbox {
+    background-color: #2d3748;
+    border-color: #4a5568;
+  }
 </style>
 {{ template "page/head_end" .}}
 
@@ -487,6 +586,12 @@
           </div>
           <a-row type="flex" justify="center">
             <a-col :style="{ width: '100%' }">
+              <!-- 公司品牌标识 -->
+              <div class="company-branding">
+                <div class="company-name">四川漾式酷玩外贸有限责任公司</div>
+                <div class="system-type">内部专用系统</div>
+              </div>
+              
               <h2 class="title headline zoom">
                 <span class="words-wrapper">
                   <b class="is-visible">{{ i18n "pages.login.hello" }}</b>
@@ -521,12 +626,18 @@
                     <a-row justify="center" class="centered">
                       <div :style="{ height: '50px', marginTop: '1rem', ...loading ? { width: '52px' } : { display: 'inline-block' } }" class="wave-btn-bg wave-btn-bg-cl">
                         <a-button class="ant-btn-primary-login" type="primary" :loading="loading" @click="login"
-                          :icon="loading ? 'poweroff' : undefined">
+                          :icon="loading ? 'poweroff' : undefined" :disabled="!termsAccepted"
+                          :title="!termsAccepted ? '请先阅读并同意使用条款才可以进行登录' : ''">
                           [[ loading ? '' : '{{ i18n "login" }}' ]]
                         </a-button>
                       </div>
                     </a-row>
                   </a-form-item>
+                  
+                  <!-- 使用条款链接 -->
+                  <div class="terms-link">
+                    <a @click="showTermsModal = true">阅读并同意使用条款</a>
+                  </div>
                 </a-space>
               </a-form>
             </a-col>
@@ -535,6 +646,62 @@
       </a-row>
     </a-layout-content>
   </transition>
+
+  <!-- 使用条款模态框 -->
+  <a-modal
+    v-model="showTermsModal"
+    title="使用条款"
+    :width="800"
+    :footer="null"
+    :mask-closable="false"
+    class="terms-modal"
+    :class="themeSwitcher.currentTheme"
+    @cancel="closeTermsModal">
+    <div class="terms-content">
+      <p><strong>重要提示：</strong>请在使用本软件前仔细阅读以下协议内容。如您不同意本协议的任何条款，请立即停止使用并卸载本软件。一旦您勾选"我已阅读并同意以上协议"并登录使用，即视为您已充分理解、认可并无条件接受本协议全部内容，本协议即构成对双方具有法律约束力的有效文件。</p>
+      
+      <h3>第一部分：软件性质与使用目的</h3>
+      <p>1. 本软件系四川漾式酷玩外贸有限责任公司（以下简称"本公司"）为满足合法合规的跨境电子商务运营技术需要，基于企业内部网络互联需求，在合规范围内为持证合格的进出口企业提供专用网络接入与技术咨询服务。仅限于访问经公司白名单审核的国际电子商务平台（例如：Amazon、eBay、Alibaba International 等），用途仅限于开展正当的国际贸易活动，不得用于其他任何用途。</p>
+      <p>2. 本公司声明：本软件不应被理解或用于规避国家网络监管、访问非法网站、散播违法信息或实施任何危害国家安全、公共安全或他人合法权益的行为。本公司严守《中华人民共和国网络安全法》《中华人民共和国数据安全法》及相关法规要求。用户使用本软件须在法律允许与合规边界内。</p>
+      
+      <h3>第二部分：用户资格与合规承诺</h3>
+      <p>1. 使用资格：用户须为在中国境内依法登记注册并合法存续的企业法人（含外贸企业、进出口公司等），并能向本公司提供有效企业营业执照复印件、法定代表人/负责人身份证明、企业对外贸易资质证明及企业联系人信息，接受本公司的合规尽职调查（KYC）。</p>
+      <p>2. 使用目的限定：用户承诺仅为合规的对外贸易/国际电商运营目的使用本软件；严禁用于访问境外违法、涉恐涉暴、涉黄涉赌、侵犯知识产权、侵害国家秘密或其他任何违法信息或服务。</p>
+      <p>3. 禁止行为：用户不得反向工程、二次分发、对外售卖、转许可或以任何方式商业化该软件，不得设立二级代理或为非本公司许可第三方提供接入。</p>
+      
+      <h3>第三部分：访问范围与技术限制（强制）</h3>
+      <p>1. 白名单原则：本公司仅对经审核同意的外部网站/IP建立访问通道，默认仅允许访问经过列入白名单的国际电商平台及相关业务IP/域名；其他全部外部网站默认封禁或无法解析访问。</p>
+      <p>2. 非商业化/非对外开放：本软件仅为内部/客户企业专用，不提供公众下载或销售。一切对外宣称为"VPN服务""翻墙服务"等的宣传均禁止。</p>
+      <p>3. 访问日志与合规审计：为履行法律义务并响应监管要求，本公司将对用户访问行为保留必要的最少量合规日志（如连接时间、接入 IP 段、访问目标域名或IP段、认证主体），并按法律法规要求保存与配合司法/主管机关调查。用户不得以任何理由干预或篡改日志。此日志存于用户自身的服务器上，本公司只保留相应服务器IP，正常合规使用的情况下无需担心隐私泄露。</p>
+      
+      <h3>第四部分：风险提示与责任分配</h3>
+      <p>1. 风险提示：任何网络技术均存在不可预见的风险（包括但不限于网络中断、数据丢失、第三方攻击或监管变更导致的访问限制等），因此用户需自行评估风险并自行承担可能损失。</p>
+      <p>2. 责任豁免：若用户违反本协议条款或违反法律法规而产生行政处罚、民事赔偿或刑事责任的，相关责任由用户自行承担。本公司在不违反法律要求的前提下，将配合主管机关调查。</p>
+      <p>3. 合规配合义务：用户应配合本公司的合规审查与整改要求，包括但不限于提供必要证照资料、接受安全检测、配合关闭违规行为等。如用户不配合，公司有权终止服务并保留追究其违约及法律责任的权利。</p>
+      
+      <h3>第五部分：商业模式与许可说明</h3>
+      <p>1. 非经营性提供：本公司对外提供的是技术咨询，非直接对公众经营的 VPN 商业服务。任何要求提供大规模对外接入或代理的请求，应通过正规电信/机房资质审查与许可审批程序进行。</p>
+      
+      <h3>第六部分：用户承诺与违约责任</h3>
+      <p>1. 用户承诺遵守国家法律法规，如发现用户有违法违规行为，本公司有权立即暂停或终止其使用权限并向主管机关报告。</p>
+      <p>2. 若因用户违法使用导致本公司遭受行政处罚、民事索赔或刑事追究，用户应承担全部责任并赔偿公司因此产生的所有损失（含但不限于罚款、律师费、停产停业损失及名誉损失等）。</p>
+      
+      <h3>第七部分：争议解决与适用法律</h3>
+      <p>1. 本说明书及其衍生争议均适用中华人民共和国法律。双方因本说明书产生争议，应首先友好协商，协商不成的，任一方可向本公司所在地有管辖权的人民法院提起诉讼。</p>
+      <p>2. 生效：本说明书自用户在登录界面点击"我已阅读并同意"并登录之日起生效。</p>
+    </div>
+    
+    <div class="terms-checkbox">
+      <a-checkbox v-model="tempTermsAccepted">
+        我已阅读并同意以上协议
+      </a-checkbox>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px;">
+      <a-button @click="closeTermsModal" style="margin-right: 10px;">取消</a-button>
+      <a-button type="primary" @click="acceptTerms" :disabled="!tempTermsAccepted">确认</a-button>
+    </div>
+  </a-modal>
 </a-layout>
 {{template "page/body_scripts" .}}
 {{template "component/aThemeSwitch" .}}
@@ -551,7 +718,10 @@
         twoFactorCode: ""
       },
       twoFactorEnable: false,
-      lang: ""
+      lang: "",
+      showTermsModal: false,
+      termsAccepted: false,
+      tempTermsAccepted: false
     },
     async mounted() {
       this.lang = LanguageManager.getLanguage();
@@ -559,6 +729,10 @@
     },
     methods: {
       async login() {
+        if (!this.termsAccepted) {
+          this.$message.warning('请先阅读并同意使用条款');
+          return;
+        }
         this.loading = true;
         const msg = await HttpUtil.post('/login', this.user);
         this.loading = false;
@@ -575,6 +749,18 @@
           return msg.obj;
         }
       },
+      acceptTerms() {
+        if (this.tempTermsAccepted) {
+          this.termsAccepted = true;
+          this.showTermsModal = false;
+          this.$message.success('已同意使用条款，现在可以登录');
+        }
+      },
+      closeTermsModal() {
+        this.tempTermsAccepted = false;
+        this.termsAccepted = false;  // 重置同意状态
+        this.showTermsModal = false;
+      }
     },
   });
 
