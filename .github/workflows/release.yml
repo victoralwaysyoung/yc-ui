@@ -1,4 +1,4 @@
-name: Release 3X-UI
+name: Release YC-UI
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
     types: [published]
   push:
     branches:
-      - main
+      - master
     paths:
       - '.github/workflows/release.yml'
       - '**.js'
@@ -43,7 +43,7 @@ jobs:
           go-version-file: go.mod
           check-latest: true
 
-      - name: Build 3X-UI
+      - name: Build YC-UI
         run: |
           export CGO_ENABLED=1
           export GOOS=linux
