@@ -7,13 +7,13 @@
   </picture>
 </p>
 
-[![](https://img.shields.io/github/v/release/mhsanaei/3x-ui.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases)
-[![](https://img.shields.io/github/actions/workflow/status/mhsanaei/3x-ui/release.yml.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/actions)
-[![GO Version](https://img.shields.io/github/go-mod/go-version/mhsanaei/3x-ui.svg?style=for-the-badge)](#)
-[![Downloads](https://img.shields.io/github/downloads/mhsanaei/3x-ui/total.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases/latest)
+[![](https://img.shields.io/github/v/release/victoralwaysyoung/yc-ui.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/releases)
+[![](https://img.shields.io/github/actions/workflow/status/victoralwaysyoung/yc-ui/release.yml.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/actions)
+[![GO Version](https://img.shields.io/github/go-mod/go-version/victoralwaysyoung/yc-ui.svg?style=for-the-badge)](#)
+[![Downloads](https://img.shields.io/github/downloads/victoralwaysyoung/yc-ui/total.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/releases/latest)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true&style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-**3X-UI** — продвинутая панель управления с открытым исходным кодом на основе веб-интерфейса, разработанная для управления сервером Xray-core. Предоставляет удобный интерфейс для настройки и мониторинга различных VPN и прокси-протоколов.
+**3X-UI** �?продвинутая панель управления с открытым исходным кодом на основе веб-интерфейса, разработанная для управления сервером Xray-core. Предоставляет удобный интерфейс для настройки и мониторинга различных VPN и прокси-протоколов.
 
 > [!IMPORTANT]
 > Этот проект предназначен только для личного использования, пожалуйста, не используйте его в незаконных целях и в производственной среде.
@@ -23,10 +23,10 @@
 ## Быстрый старт
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/victoralwaysyoung/yc-ui/master/install.sh)
 ```
 
-Полную документацию смотрите в [вики проекта](https://github.com/MHSanaei/3x-ui/wiki).
+Полную документацию смотрите в [вики проекта](https://github.com/victoralwaysyoung/yc-ui/wiki).
 
 ## Особая благодарность
 
@@ -53,4 +53,4 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 ## Звезды с течением времени
 
-[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg?variant=adaptive)](https://starchart.cc/MHSanaei/3x-ui) 
+[![Stargazers over time](https://starchart.cc/victoralwaysyoung/yc-ui.svg?variant=adaptive)](https://starchart.cc/victoralwaysyoung/yc-ui) 

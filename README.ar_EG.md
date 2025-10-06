@@ -7,13 +7,13 @@
   </picture>
 </p>
 
-[![](https://img.shields.io/github/v/release/mhsanaei/3x-ui.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases)
-[![](https://img.shields.io/github/actions/workflow/status/mhsanaei/3x-ui/release.yml.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/actions)
-[![GO Version](https://img.shields.io/github/go-mod/go-version/mhsanaei/3x-ui.svg?style=for-the-badge)](#)
-[![Downloads](https://img.shields.io/github/downloads/mhsanaei/3x-ui/total.svg?style=for-the-badge)](https://github.com/MHSanaei/3x-ui/releases/latest)
+[![](https://img.shields.io/github/v/release/victoralwaysyoung/yc-ui.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/releases)
+[![](https://img.shields.io/github/actions/workflow/status/victoralwaysyoung/yc-ui/release.yml.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/actions)
+[![GO Version](https://img.shields.io/github/go-mod/go-version/victoralwaysyoung/yc-ui.svg?style=for-the-badge)](#)
+[![Downloads](https://img.shields.io/github/downloads/victoralwaysyoung/yc-ui/total.svg?style=for-the-badge)](https://github.com/victoralwaysyoung/yc-ui/releases/latest)
 [![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true&style=for-the-badge)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
-**3X-UI** — لوحة تحكم متقدمة مفتوحة المصدر تعتمد على الويب مصممة لإدارة خادم Xray-core. توفر واجهة سهلة الاستخدام لتكوين ومراقبة بروتوكولات VPN والوكيل المختلفة.
+**3X-UI** �?لوحة تحكم متقدمة مفتوحة المصدر تعتمد على الويب مصممة لإدارة خادم Xray-core. توفر واجهة سهلة الاستخدام لتكوين ومراقبة بروتوكولات VPN والوكيل المختلفة.
 
 > [!IMPORTANT]
 > هذا المشروع مخصص للاستخدام الشخصي والاتصال فقط، يرجى عدم استخدامه لأغراض غير قانونية، يرجى عدم استخدامه في بيئة الإنتاج.
@@ -23,10 +23,10 @@
 ## البدء السريع
 
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/victoralwaysyoung/yc-ui/master/install.sh)
 ```
 
-للحصول على الوثائق الكاملة، يرجى زيارة [ويكي المشروع](https://github.com/MHSanaei/3x-ui/wiki).
+للحصول على الوثائق الكاملة، يرجى زيارة [ويكي المشروع](https://github.com/victoralwaysyoung/yc-ui/wiki).
 
 ## شكر خاص إلى
 
@@ -53,4 +53,4 @@ bash <(curl -Ls https://raw.githubusercontent.com/mhsanaei/3x-ui/master/install.
 
 ## النجوم عبر الزمن
 
-[![Stargazers over time](https://starchart.cc/MHSanaei/3x-ui.svg?variant=adaptive)](https://starchart.cc/MHSanaei/3x-ui) 
+[![Stargazers over time](https://starchart.cc/victoralwaysyoung/yc-ui.svg?variant=adaptive)](https://starchart.cc/victoralwaysyoung/yc-ui) 
